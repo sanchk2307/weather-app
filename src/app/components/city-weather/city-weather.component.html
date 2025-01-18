@@ -1,0 +1,66 @@
+@if (weatherData) {
+    <div class="city-weather-container" [ngClass]="{'collapsed': isCollapsed}" (click)="toggleExpandCollapse()">
+        <div class="upper-data">
+            @if (weatherData.time.current > weatherData.time.sunrise && weatherData.time.current < weatherData.time.sunset) {
+            <img src="hot.png" alt="Morning">
+            } @else {
+            <img src="cold.png" alt="Night">
+            }
+            @if (!disableRemove) {
+                <button class="remove" (click)="removeCity()">
+                    <fa-icon [icon]="removeIcon"></fa-icon>
+                </button>
+            }
+            <div class="weather-data">
+                <div class="location">{{ weatherData.location }}</div>
+                <div class="temperature-details">
+                    <div class="temperature">{{ weatherData.temp.current | number:'1.0-0' }}{{unit === 'metric'? '°C' : '°F'}}</div>
+                    <div class="feels-like-temperature">Feels like {{ weatherData.temp.feels_like | number:'1.0-0' }}{{unit === 'metric'? '°C' : '°F'}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-data">
+            <div class="more-info-label">More Information</div>
+            <div class="more-info-container">
+                <div class="info-block">
+                    <div class="info-block-label">
+                        <img src="min.png" alt="Minimum Temperature">
+                        <span>min</span>
+                    </div>
+                    <div class="info-block-value">
+                        {{ weatherData.temp.min | number:'1.1-1' }}{{unit === 'metric'? '°C' : '°F'}}
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-label">
+                        <img src="max.png" alt="Maximum Temperature">
+                        <span>max</span>
+                    </div>
+                    <div class="info-block-value">
+                        {{ weatherData.temp.max | number:'1.1-1' }}{{unit === 'metric'? '°C' : '°F'}}
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-label">
+                        <img src="humidity.png" alt="Humidity">
+                        <span>humidity</span>
+                    </div>
+                    <div class="info-block-value">
+                        {{ weatherData.humidity }}%
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-label">
+                        <img src="wind.png" alt="Wind Speed">
+                        <span>wind</span>
+                    </div>
+                    <div class="info-block-value">
+                        {{ weatherData.wind_speed | number:'1.1-1' }}{{unit === 'metric'? 'kmph' : 'mph'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+} @else {
+    <p class="fallback-text">Loading...</p>
+}

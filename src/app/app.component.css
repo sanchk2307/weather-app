@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    width: 75%;
+    margin: 1em 0em;
+    text-align: center;
+    position: relative;
+}
+
+.conversion {
+    width: 25%;
+    text-align: center;
+    color: var(--white);
+    opacity: 0.5;
+}
+
+.conversion button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    font-size: 16px;
+    color: var(--white);
+    opacity: 0.5;
+}
+
+.conversion button.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.search input {
+    background-color: var(--shadow-light);
+    outline: none;
+    border: 0;
+    border-radius: 20px;
+    padding: 1em;
+    color: var(--grey-1);
+    font-size: 0.8em;
+    text-align: center;
+    width: 100%;
+}
+
+.search-results {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--blue-2);
+    border-radius: 20px;
+    color: var(--grey-1);
+    font-size: 0.8em;
+    text-align: center;
+    max-height: 175px;
+    overflow-y: scroll;
+}
+
+.search-results .result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0.25em;
+    cursor: pointer;
+}
+
+.search-results .result:hover {
+    background-color: var(--blue-3);
+}
+
+.fallback-text {
+    color: var(--grey-1);
+    text-align: center;
+}

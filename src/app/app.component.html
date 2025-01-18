@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="controls">
+        <div class="search">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <input type="text" placeholder="Search City" autocomplete="off" name="city" formControlName="city"/>
+                @if (searchResults.length) {
+                    <div class="search-results">
+                        @for (result of searchResults; track result.id) {
+                            <option class="result" [value]="result.name" (click)="onSelectOption(result.name)">{{ result.name }}</option>
+                        }
+                    </div>
+                }
+            </form>
+        </div>
+        <div class="conversion">
+            <button class="metric" [ngClass]="{'active': unit === 'metric'}" (click)="convertUnit('metric')">°C</button> | <button class="imperial" [ngClass]="{'active': unit === 'imperial'}" (click)="convertUnit('imperial')">°F</button>
+        </div>
+    </div>
+    @if (currentLocation) {
+        <app-city-weather class="current-location" [unit]="unit" [location]="currentLocation" [disableRemove]="true" />
+    }
+    @for (city of cities; track city; let index = $index) {
+        <app-city-weather [unit]="unit" [cityName]="city" (remove)="removeCity(index)" />
+    }
+    @if (!currentLocation && !cities.length) {
+        <p class="fallback-text">No cities selected</p>
+    }
+</div>

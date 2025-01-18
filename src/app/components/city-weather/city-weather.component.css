@@ -1,0 +1,162 @@
+.city-weather-container {
+    width: 400px;
+    height: 600px;
+    background-color: var(--blue-2);
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px var(--shadow-dark);
+    overflow: hidden;
+    transition: height 0.4s ease;
+    margin-bottom: 1em;
+}
+
+.city-weather-container.collapsed {
+    height: 100px;
+}
+
+.upper-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: height 0.4s ease;
+}
+
+.city-weather-container.collapsed .upper-data {
+    height: 100%;
+}
+
+.remove {    
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.remove fa-icon {
+    color: #b70505;
+    font-size: 1.2em;
+}
+
+.lower-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.4s ease;
+}
+
+.city-weather-container.collapsed .lower-data {
+    height: 0%;
+}
+
+.upper-data img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.weather-data {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-weather-container.collapsed .weather-data {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.location {
+    color: var(--white);
+    text-align: center;
+    font-size: 1.2em;
+    transition: transform 0.4s ease-in;
+}
+
+.temperature {
+    color: var(--white);
+    font-size: 4em;
+    text-align: center;
+    font-weight: 900;
+    transition: font-size 0.4s ease;
+}
+
+.city-weather-container.collapsed .temperature {
+    font-size: 2em;
+}
+
+.feels-like-temperature {
+    color: var(--white);
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.more-info-label {
+    color: var(--white);
+}
+
+.more-info-container {
+    flex: 1;
+    background-color: var(--shadow-light);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    width: 50%;
+    display: flex;    
+}
+
+.info-block-label {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block-label img {
+    width: 1.5em;
+}
+
+.info-block-label span {
+    color: var(--white);
+    font-size: 0.8em;
+}
+
+.info-block-value {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--white);
+}
+
+.fallback-text {
+    color: var(--grey-1);
+    text-align: center;
+}
