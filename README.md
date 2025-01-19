@@ -1,73 +1,74 @@
-Weather App
+# Weather App 🌤️
 
-Welcome to the Weather App! This is a simple, user-friendly application built with Angular to display current weather conditions and forecasts for any location. It utilizes APIs from OpenWeatherMap and RapidAPI to fetch weather data and provide accurate, up-to-date information.
+A sleek and user-friendly weather application built using Angular. This app provides real-time weather updates, forecasts, and more, leveraging the OpenWeatherMap and RapidAPI services.
 
-Features
+## Features 🌟
 
-Search by City: Get weather details by entering the city name.
+- **Real-Time Weather Updates:** Get current weather data for any city.
+- **Search Functionality:** Search weather conditions by city or location.
+- **Styling:** CSS
 
-Current Weather: View real-time temperature, humidity, wind speed, and weather conditions.
+## Live Demo 🚀
 
-Technologies Used
+Check out the live application here: https://weather-app-1c089.web.app/
 
-Framework: Angular
+## Technologies Used 💻
 
-APIs:
+| Technology      | Description                     |
+|------------------|---------------------------------|
+| Angular          | Frontend framework             |
+| OpenWeatherMap   | Weather API for real-time data |
+| RapidAPI         | API platform                   |
 
-OpenWeatherMap
+## Installation ⚙️
 
-RapidAPI
+Follow these steps to set up the project locally:
 
-Styling: CSS for a clean and responsive UI
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd weather-app
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Add your API keys:
+   - Get an API key from [OpenWeatherMap](https://openweathermap.org/) and [RapidAPI](https://city-and-state-search-api.p.rapidapi.com).
+   - Add the keys to the service files
+5. Run the app:
+   ```bash
+   ng serve
+   ```
+6. Open the app in your browser:
+   ```
+   http://localhost:4200
+   ```
 
-Deployment: Firebase
+## Usage 📖
 
-Getting Started
+1. Search for a city to get its current weather details.
+2. Explore additional weather metrics like humidity, wind speed, and more.
 
-Follow these instructions to set up and run the project locally.
+## Contributing 🤝
 
-Prerequisites
+Contributions are welcome! To improve this project:
+1. Fork the repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
 
-Node.js and npm installed on your machine
-
-Angular CLI installed globally
-
-Installation
-
-Clone the repository:
-
-git clone <repository-url>
-
-Navigate to the project directory:
-
-cd weather-app
-
-Install dependencies:
-
-npm install
-
-Usage
-
-Obtain API keys from:
-
-OpenWeatherMap
-
-RapidAPI
-
-Add your API keys in the environment file:
-
-export const environment = {
-production: false,
-openWeatherMapApiKey: 'your-openweathermap-api-key',
-rapidApiKey: 'your-rapidapi-key'
-};
-
-Run the application:
-
-ng serve
-
-Open your browser and navigate to http://localhost:4200 to view the app.
-
-Live Demo
-
-Check out the live version of the app here: https://weather-app-1c089.web.app/
+---
