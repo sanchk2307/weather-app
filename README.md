@@ -7,6 +7,8 @@ A sleek and user-friendly weather application built using Angular. This app prov
 - **Real-Time Weather Updates:** Get current weather data for any city.
 - **Search Functionality:** Search weather conditions by city or location.
 - **Styling:** CSS
+  
+<img width="520" alt="weather app" src="https://github.com/user-attachments/assets/467b0c67-2e04-48b7-be19-664e5c8049a0" />
 
 ## Live Demo 🚀
 
